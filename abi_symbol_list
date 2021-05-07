@@ -7742,8 +7742,10 @@
   drm_atomic_add_affected_connectors
   drm_atomic_add_affected_planes
   drm_atomic_commit
+  drm_atomic_get_connector_state
   drm_atomic_get_crtc_state
   drm_atomic_get_new_connector_for_encoder
+  drm_atomic_get_old_connector_for_encoder
   drm_atomic_get_plane_state
   drm_atomic_get_private_obj_state
   drm_atomic_helper_bridge_destroy_state
@@ -7775,11 +7777,13 @@
   __drm_atomic_helper_private_obj_duplicate_state
   drm_atomic_helper_set_config
   drm_atomic_helper_setup_commit
+  drm_atomic_helper_shutdown
   drm_atomic_helper_swap_state
   drm_atomic_helper_update_plane
   drm_atomic_helper_wait_for_dependencies
   drm_atomic_helper_wait_for_fences
   drm_atomic_helper_wait_for_flip_done
+  drm_atomic_nonblocking_commit
   drm_atomic_normalize_zpos
   drm_atomic_private_obj_fini
   drm_atomic_private_obj_init
@@ -7803,6 +7807,7 @@
   drm_connector_unregister
   drm_crtc_arm_vblank_event
   drm_crtc_cleanup
+  __drm_crtc_commit_free
   drm_crtc_enable_color_mgmt
   drm_crtc_handle_vblank
   drm_crtc_init_with_planes
@@ -7901,6 +7906,7 @@
   drm_rect_intersect
   drm_release
   drm_rotation_simplify
+  drm_self_refresh_helper_alter_state
   drm_send_event
   drm_universal_plane_init
   drm_vblank_init
@@ -7934,6 +7940,7 @@
   extcon_set_property
   extcon_set_property_capability
   extcon_set_state_sync
+  failure_tracking
   fasync_helper
   __fdget
   fd_install
@@ -8454,6 +8461,7 @@
   of_usb_host_tpl_support
   page_endio
   page_mapping
+  __page_pinner_migration_failed
   panic
   panic_notifier_list
   param_array_ops
@@ -9026,6 +9034,10 @@
   __traceiter_android_rvh_cpu_overutilized
   __traceiter_android_rvh_dequeue_task
   __traceiter_android_rvh_find_energy_efficient_cpu
+  __traceiter_android_rvh_irqs_disable
+  __traceiter_android_rvh_irqs_enable
+  __traceiter_android_rvh_preempt_disable
+  __traceiter_android_rvh_preempt_enable
   __traceiter_android_rvh_select_task_rq_rt
   __traceiter_android_rvh_set_iowait
   __traceiter_android_rvh_typec_tcpci_chk_contaminant
@@ -9072,6 +9084,7 @@
   __traceiter_rwmmio_write
   __traceiter_sched_cpu_capacity_tp
   __traceiter_sched_overutilized_tp
+  __traceiter_sched_switch
   __traceiter_sched_util_est_cfs_tp
   __traceiter_sched_util_est_se_tp
   __traceiter_suspend_resume
