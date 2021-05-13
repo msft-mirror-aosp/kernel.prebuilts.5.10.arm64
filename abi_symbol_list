@@ -1789,6 +1789,7 @@
   bdput
   bio_endio
   bitmap_allocate_region
+  __bitmap_andnot
   __bitmap_clear
   bitmap_find_next_zero_area_off
   __bitmap_or
@@ -2005,6 +2006,7 @@
   cpu_latency_qos_remove_request
   cpu_latency_qos_request_active
   cpu_latency_qos_update_request
+  cpumask_any_but
   cpumask_next
   cpumask_next_and
   cpu_number
@@ -2924,6 +2926,7 @@
   irq_domain_update_bus_token
   irq_domain_xlate_onecell
   irq_domain_xlate_twocell
+  irq_do_set_affinity
   irq_find_mapping
   irq_find_matching_fwspec
   irq_get_irqchip_state
@@ -2966,6 +2969,7 @@
   kern_mount
   kern_unmount
   __kfifo_alloc
+  __kfifo_free
   __kfifo_in
   __kfifo_out
   kfree
@@ -3315,6 +3319,7 @@
   overflowuid
   page_endio
   page_mapping
+  __page_pinner_migration_failed
   panic
   panic_notifier_list
   panic_timeout
@@ -6953,7 +6958,6 @@
   config_group_init
   config_group_init_type_name
   _ctype
-  filp_open
   fs_bio_set
   hex_to_bin
   iov_iter_bvec
@@ -7450,11 +7454,13 @@
   cpufreq_driver_fast_switch
   cpufreq_driver_resolve_freq
   __cpufreq_driver_target
+  cpufreq_driver_target
   cpufreq_enable_fast_switch
   cpufreq_freq_transition_begin
   cpufreq_freq_transition_end
   cpufreq_frequency_table_verify
   cpufreq_generic_attr
+  cpufreq_get
   cpufreq_policy_transition_delay_us
   cpufreq_quick_get
   cpufreq_register_driver
@@ -7489,6 +7495,11 @@
   cpu_subsys
   crc8
   crc8_populate_msb
+  crypto_aead_decrypt
+  crypto_aead_encrypt
+  crypto_aead_setauthsize
+  crypto_aead_setkey
+  crypto_alloc_aead
   crypto_alloc_base
   crypto_alloc_shash
   crypto_comp_compress
@@ -7497,6 +7508,8 @@
   crypto_register_alg
   crypto_register_scomp
   crypto_shash_digest
+  crypto_shash_finup
+  crypto_shash_setkey
   crypto_unregister_alg
   crypto_unregister_scomp
   csum_ipv6_magic
@@ -8208,6 +8221,7 @@
   __kfifo_init
   __kfifo_out
   kfree
+  kfree_sensitive
   kfree_skb
   kill_anon_super
   kill_fasync
@@ -9036,6 +9050,7 @@
   __traceiter_android_rvh_find_energy_efficient_cpu
   __traceiter_android_rvh_irqs_disable
   __traceiter_android_rvh_irqs_enable
+  __traceiter_android_rvh_post_init_entity_util_avg
   __traceiter_android_rvh_preempt_disable
   __traceiter_android_rvh_preempt_enable
   __traceiter_android_rvh_select_task_rq_rt
@@ -9052,6 +9067,7 @@
   __traceiter_android_vh_enable_thermal_genl_check
   __traceiter_android_vh_ep_create_wakeup_source
   __traceiter_android_vh_ipi_stop
+  __traceiter_android_vh_of_i2c_get_board_info
   __traceiter_android_vh_pagecache_get_page
   __traceiter_android_vh_rmqueue
   __traceiter_android_vh_timerfd_create
@@ -9094,6 +9110,7 @@
   __tracepoint_android_rvh_find_energy_efficient_cpu
   __tracepoint_android_rvh_irqs_disable
   __tracepoint_android_rvh_irqs_enable
+  __tracepoint_android_rvh_post_init_entity_util_avg
   __tracepoint_android_rvh_preempt_disable
   __tracepoint_android_rvh_preempt_enable
   __tracepoint_android_rvh_select_task_rq_rt
@@ -9110,6 +9127,7 @@
   __tracepoint_android_vh_enable_thermal_genl_check
   __tracepoint_android_vh_ep_create_wakeup_source
   __tracepoint_android_vh_ipi_stop
+  __tracepoint_android_vh_of_i2c_get_board_info
   __tracepoint_android_vh_pagecache_get_page
   __tracepoint_android_vh_rmqueue
   __tracepoint_android_vh_timerfd_create
@@ -9220,6 +9238,7 @@
   usb_copy_descriptors
   __usb_create_hcd
   usb_disabled
+  usb_enable_autosuspend
   usb_ep_autoconfig
   usb_ep_disable
   usb_ep_enable
@@ -9228,6 +9247,7 @@
   usb_gadget_set_state
   usb_hcd_is_primary_hcd
   usb_hcd_platform_shutdown
+  usb_hub_find_child
   usb_interface_id
   usb_otg_state_string
   usb_put_function_instance
@@ -9365,6 +9385,9 @@
   __xfrm_state_destroy
   xfrm_state_lookup_byspi
   xfrm_stateonly_find
+  xhci_address_device
+  xhci_bus_resume
+  xhci_bus_suspend
   xhci_gen_setup
   xhci_get_ep_ctx
   xhci_get_slot_ctx
