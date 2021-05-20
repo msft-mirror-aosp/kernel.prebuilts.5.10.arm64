@@ -1775,6 +1775,7 @@
   arm64_const_caps_ready
   arm64_use_ng_mappings
   __arm_smccc_smc
+  arp_tbl
   atomic_notifier_call_chain
   atomic_notifier_chain_register
   atomic_notifier_chain_unregister
@@ -2898,6 +2899,7 @@
   ipv6_ext_hdr
   ipv6_find_hdr
   ipv6_skip_exthdr
+  ipv6_stub
   irq_chip_ack_parent
   irq_chip_disable_parent
   irq_chip_enable_parent
@@ -3159,6 +3161,7 @@
   napi_gro_receive
   __napi_schedule
   napi_schedule_prep
+  neigh_lookup
   __netdev_alloc_skb
   netdev_rx_handler_register
   netdev_rx_handler_unregister
@@ -7545,10 +7548,15 @@
   _dev_err
   devfreq_add_device
   devfreq_add_governor
+  devfreq_monitor_resume
+  devfreq_monitor_start
+  devfreq_monitor_stop
+  devfreq_monitor_suspend
   devfreq_recommended_opp
   devfreq_register_opp_notifier
   devfreq_remove_device
   devfreq_unregister_opp_notifier
+  devfreq_update_interval
   dev_fwnode
   dev_get_by_name
   device_add_disk
@@ -8062,6 +8070,7 @@
   handle_simple_irq
   handle_sysrq
   have_governor_per_policy
+  hex2bin
   hex_dump_to_buffer
   hex_to_bin
   hid_add_device
@@ -8243,6 +8252,7 @@
   kobject_init_and_add
   kobject_put
   kobject_uevent
+  kobject_uevent_env
   kobj_sysfs_ops
   krealloc
   kstat
@@ -8522,6 +8532,7 @@
   perf_event_create_kernel_counter
   perf_event_enable
   perf_event_pause
+  perf_event_read_local
   perf_event_read_value
   perf_event_release_kernel
   perf_event_update_userpage
@@ -9045,6 +9056,7 @@
   trace_event_raw_init
   trace_event_reg
   trace_handle_return
+  __traceiter_android_rvh_cgroup_force_kthread_migration
   __traceiter_android_rvh_cpu_overutilized
   __traceiter_android_rvh_dequeue_task
   __traceiter_android_rvh_find_energy_efficient_cpu
@@ -9070,6 +9082,7 @@
   __traceiter_android_vh_of_i2c_get_board_info
   __traceiter_android_vh_pagecache_get_page
   __traceiter_android_vh_rmqueue
+  __traceiter_android_vh_thermal_pm_notify_suspend
   __traceiter_android_vh_timerfd_create
   __traceiter_android_vh_typec_store_partner_src_caps
   __traceiter_android_vh_typec_tcpci_override_toggling
@@ -9105,6 +9118,7 @@
   __traceiter_sched_util_est_se_tp
   __traceiter_suspend_resume
   trace_output_call
+  __tracepoint_android_rvh_cgroup_force_kthread_migration
   __tracepoint_android_rvh_cpu_overutilized
   __tracepoint_android_rvh_dequeue_task
   __tracepoint_android_rvh_find_energy_efficient_cpu
@@ -9130,6 +9144,7 @@
   __tracepoint_android_vh_of_i2c_get_board_info
   __tracepoint_android_vh_pagecache_get_page
   __tracepoint_android_vh_rmqueue
+  __tracepoint_android_vh_thermal_pm_notify_suspend
   __tracepoint_android_vh_timerfd_create
   __tracepoint_android_vh_typec_store_partner_src_caps
   __tracepoint_android_vh_typec_tcpci_override_toggling
@@ -9167,6 +9182,7 @@
   __tracepoint_sched_util_est_se_tp
   __tracepoint_suspend_resume
   trace_print_array_seq
+  trace_print_bitmask_seq
   trace_print_flags_seq
   trace_print_symbols_seq
   trace_raw_output_prep
