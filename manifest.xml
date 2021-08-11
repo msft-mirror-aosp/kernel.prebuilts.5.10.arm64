@@ -11,7 +11,7 @@
 
   <project path="hikey-modules" name="kernel/hikey-modules" revision="29186c26014764e1ed94548b285b3f020beed758" upstream="android12-5.10" dest-branch="android12-5.10" />
 
-  <project path="common" name="kernel/common" revision="4be155626125321b52f27d38f5a8527e6c6b79a5" upstream="android12-5.10-m2107" dest-branch="android12-5.10-m2107" />
+  <project path="common" name="kernel/common" revision="5b153f189546d4dc818931f58fd5b5d16f445d41" upstream="android12-5.10-m2107" dest-branch="android12-5.10-m2107" />
 
   <project path="kernel/tests" name="kernel/tests" revision="c3bc6d71b3525ce39caccf096053e2acb31d5d0c" />
 
