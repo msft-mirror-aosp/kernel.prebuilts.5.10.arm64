@@ -630,6 +630,7 @@ kernel/net/ieee802154/ieee802154.ko
 kernel/net/ieee802154/ieee802154_socket.ko
 kernel/net/ieee802154/6lowpan/ieee802154_6lowpan.ko
 kernel/net/mac802154/mac802154.ko
+kernel/net/nfc/nfc.ko
 kernel/net/vmw_vsock/vsock.ko
 kernel/net/vmw_vsock/vsock_diag.ko
 kernel/net/vmw_vsock/vmw_vsock_virtio_transport_common.ko
