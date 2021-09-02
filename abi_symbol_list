@@ -408,6 +408,8 @@
   cpuhp_tasks_frozen
   cpu_hwcap_keys
   cpu_hwcaps
+  cpuidle_pause_and_lock
+  cpuidle_resume_and_unlock
   cpu_latency_qos_add_request
   cpu_latency_qos_remove_request
   cpu_latency_qos_update_request
@@ -672,6 +674,7 @@
   down_interruptible
   down_read
   down_read_trylock
+  down_timeout
   down_write
   drain_workqueue
   driver_register
@@ -966,6 +969,7 @@
   gpiochip_get_data
   gpiochip_lock_as_irq
   gpiochip_unlock_as_irq
+  gpiod_cansleep
   gpiod_count
   gpiod_direction_input
   gpiod_direction_output
@@ -1131,9 +1135,13 @@
   kern_unmount
   __kfifo_alloc
   __kfifo_free
+  __kfifo_from_user_r
   __kfifo_in
   __kfifo_init
+  __kfifo_in_r
   __kfifo_out
+  __kfifo_skip_r
+  __kfifo_to_user_r
   kfree
   kfree_sensitive
   kfree_skb
@@ -1448,6 +1456,7 @@
   pinctrl_remove_gpio_range
   pinctrl_select_state
   pin_get_name
+  pin_user_pages
   pin_user_pages_fast
   platform_bus_type
   platform_device_add
@@ -1697,6 +1706,7 @@
   seq_read
   seq_release
   seq_release_private
+  seq_vprintf
   seq_write
   set_blocksize
   set_cpus_allowed_ptr
@@ -1832,6 +1842,7 @@
   static_key_slow_dec
   static_key_slow_inc
   stop_machine
+  stpcpy
   strcasecmp
   strcat
   strchr
@@ -1959,6 +1970,7 @@
   __traceiter_android_vh_ipi_stop
   __traceiter_android_vh_of_i2c_get_board_info
   __traceiter_android_vh_setscheduler_uclamp
+  __traceiter_android_vh_snd_compr_use_pause_in_drain
   __traceiter_android_vh_thermal_pm_notify_suspend
   __traceiter_android_vh_timerfd_create
   __traceiter_android_vh_typec_store_partner_src_caps
@@ -2022,6 +2034,7 @@
   __tracepoint_android_vh_ipi_stop
   __tracepoint_android_vh_of_i2c_get_board_info
   __tracepoint_android_vh_setscheduler_uclamp
+  __tracepoint_android_vh_snd_compr_use_pause_in_drain
   __tracepoint_android_vh_thermal_pm_notify_suspend
   __tracepoint_android_vh_timerfd_create
   __tracepoint_android_vh_typec_store_partner_src_caps
@@ -2102,6 +2115,8 @@
   ufshcd_shutdown
   ufshcd_system_resume
   ufshcd_system_suspend
+  __uio_register_device
+  uio_unregister_device
   unlock_page
   unmap_mapping_range
   unpin_user_page
@@ -2247,6 +2262,7 @@
   vring_interrupt
   vring_new_virtqueue
   vsnprintf
+  vsscanf
   vunmap
   vzalloc
   wait_for_completion
