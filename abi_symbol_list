@@ -1246,6 +1246,7 @@
   __kfifo_init
   __kfifo_in_r
   __kfifo_out
+  __kfifo_out_peek
   __kfifo_skip_r
   __kfifo_to_user_r
   kfree
@@ -3133,6 +3134,11 @@
 # required by failover.ko
   netdev_master_upper_dev_link
   rtnl_is_locked
+  vlan_uses_dev
+  vlan_vid_add
+  vlan_vid_del
+  vlan_vids_add_by_dev
+  vlan_vids_del_by_dev
 
 # required by gnss-cmdline.ko
   bus_find_device
