@@ -233,6 +233,7 @@
   __bitmap_weight
   blk_alloc_queue
   blk_cleanup_queue
+  blk_crypto_init_key
   blkdev_get_by_dev
   blkdev_get_by_path
   blkdev_put
@@ -1140,6 +1141,7 @@
   init_timer_key
   init_wait_entry
   __init_waitqueue_head
+  input_alloc_absinfo
   input_allocate_device
   input_close_device
   input_event
@@ -1244,6 +1246,7 @@
   __kfifo_init
   __kfifo_in_r
   __kfifo_out
+  __kfifo_out_peek
   __kfifo_skip_r
   __kfifo_to_user_r
   kfree
@@ -1807,6 +1810,7 @@
   regulator_enable_regmap
   regulator_get
   regulator_get_optional
+  regulator_get_voltage
   regulator_get_voltage_sel_regmap
   regulator_is_enabled
   regulator_is_enabled_regmap
@@ -1895,6 +1899,7 @@
   scsi_register_interface
   scsi_unblock_requests
   sdev_prefix_printk
+  send_sig_info
   seq_hex_dump
   seq_lseek
   seq_open
@@ -2226,6 +2231,7 @@
   __traceiter_android_rvh_typec_tcpci_chk_contaminant
   __traceiter_android_rvh_typec_tcpci_get_vbus
   __traceiter_android_rvh_uclamp_eff_get
+  __traceiter_android_rvh_uclamp_rq_util_with
   __traceiter_android_rvh_ufs_complete_init
   __traceiter_android_rvh_ufs_reprogram_all_keys
   __traceiter_android_rvh_util_est_update
@@ -2311,6 +2317,7 @@
   __tracepoint_android_rvh_typec_tcpci_chk_contaminant
   __tracepoint_android_rvh_typec_tcpci_get_vbus
   __tracepoint_android_rvh_uclamp_eff_get
+  __tracepoint_android_rvh_uclamp_rq_util_with
   __tracepoint_android_rvh_ufs_complete_init
   __tracepoint_android_rvh_ufs_reprogram_all_keys
   __tracepoint_android_rvh_util_est_update
@@ -3127,6 +3134,11 @@
 # required by failover.ko
   netdev_master_upper_dev_link
   rtnl_is_locked
+  vlan_uses_dev
+  vlan_vid_add
+  vlan_vid_del
+  vlan_vids_add_by_dev
+  vlan_vids_del_by_dev
 
 # required by gnss-cmdline.ko
   bus_find_device
@@ -3494,6 +3506,10 @@
   compat_ptr_ioctl
   fput
 
+# required by usbip-core.ko
+  iov_iter_kvec
+  sock_recvmsg
+
 # required by vcan.ko
   sock_efree
 
@@ -3512,6 +3528,14 @@
   bgpio_init
   devm_gpiochip_add_data_with_key
   devm_mfd_add_devices
+
+# required by vhci-hcd.ko
+  kernel_sock_shutdown
+  platform_bus
+  sockfd_lookup
+  usb_create_shared_hcd
+  usb_get_dev
+  usb_put_dev
 
 # required by virt_wifi.ko
   cfg80211_connect_done
