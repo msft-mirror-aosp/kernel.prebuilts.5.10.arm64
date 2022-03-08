@@ -291,6 +291,7 @@
   bpf_trace_run6
   bpf_trace_run7
   bpf_trace_run8
+  bpf_trace_run9
   build_skb
   bus_find_device
   bus_for_each_dev
@@ -381,6 +382,7 @@
   cma_alloc
   cma_for_each_area
   cma_get_name
+  cma_get_size
   cma_release
   compat_alloc_user_space
   complete
@@ -1063,6 +1065,7 @@
   get_random_u32
   get_sg_io_hdr
   __get_task_comm
+  get_task_cred
   get_thermal_instance
   get_unused_fd_flags
   get_user_pages
@@ -1331,6 +1334,7 @@
   kstrtos8
   kstrtou16
   kstrtou8
+  kstrtou8_from_user
   kstrtouint
   kstrtouint_from_user
   kstrtoull
@@ -1483,6 +1487,7 @@
   noop_llseek
   nr_cpu_ids
   nr_irqs
+  ns_capable
   nsec_to_clock_t
   ns_to_timespec64
   __num_online_cpus
@@ -1746,6 +1751,7 @@
   proto_unregister
   pskb_expand_head
   __pskb_pull_tail
+  __put_cred
   put_device
   put_disk
   __put_page
@@ -1919,6 +1925,7 @@
   sched_clock
   sched_feat_keys
   sched_setattr_nocheck
+  sched_set_fifo
   sched_setscheduler
   sched_setscheduler_nocheck
   sched_show_task
@@ -2117,6 +2124,7 @@
   snd_soc_runtime_set_dai_fmt
   snd_soc_unregister_card
   snd_soc_unregister_component
+  snd_vendor_set_ops
   snprintf
   soc_device_register
   sock_alloc_send_skb
@@ -2145,6 +2153,7 @@
   spi_finalize_current_message
   spi_register_controller
   __spi_register_driver
+  spi_set_cs_timing
   spi_setup
   spi_sync
   spi_sync_locked
@@ -2268,6 +2277,7 @@
   time64_to_tm
   topology_set_thermal_pressure
   _totalram_pages
+  touch_softlockup_watchdog
   __trace_bprintk
   trace_event_buffer_commit
   trace_event_buffer_reserve
@@ -2330,6 +2340,7 @@
   __traceiter_android_vh_typec_tcpci_override_toggling
   __traceiter_android_vh_typec_tcpm_get_timer
   __traceiter_android_vh_typec_tcpm_log
+  __traceiter_android_vh_typec_tcpm_modify_src_caps
   __traceiter_android_vh_ufs_check_int_errors
   __traceiter_android_vh_ufs_compl_command
   __traceiter_android_vh_ufs_fill_prdt
@@ -2419,6 +2430,7 @@
   __tracepoint_android_vh_typec_tcpci_override_toggling
   __tracepoint_android_vh_typec_tcpm_get_timer
   __tracepoint_android_vh_typec_tcpm_log
+  __tracepoint_android_vh_typec_tcpm_modify_src_caps
   __tracepoint_android_vh_ufs_check_int_errors
   __tracepoint_android_vh_ufs_compl_command
   __tracepoint_android_vh_ufs_fill_prdt
@@ -2593,6 +2605,7 @@
   vb2_common_vm_ops
   vb2_create_framevec
   vb2_destroy_framevec
+  vb2_dma_sg_memops
   vb2_dqbuf
   vb2_fop_mmap
   vb2_fop_poll
