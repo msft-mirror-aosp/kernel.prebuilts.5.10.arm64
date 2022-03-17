@@ -6170,6 +6170,7 @@
   __traceiter_dwc3_readl
   __traceiter_dwc3_writel
   __traceiter_gpu_mem_total
+  __traceiter_kfree_skb
   __traceiter_sched_util_est_se_tp
   __traceiter_xdp_exception
   __tracepoint_android_rvh_account_irq
@@ -6321,6 +6322,7 @@
   __tracepoint_ipi_raise
   __tracepoint_irq_handler_entry
   __tracepoint_irq_handler_exit
+  __tracepoint_kfree_skb
   __tracepoint_pelt_cfs_tp
   __tracepoint_pelt_dl_tp
   __tracepoint_pelt_irq_tp
@@ -10105,6 +10107,7 @@
   usb_hcd_start_port_resume
   usb_hcd_unlink_urb_from_ep
   usb_hcds_loaded
+  usb_hid_driver
   usb_hub_clear_tt_buffer
   usb_hub_find_child
   usb_ifnum_to_if
@@ -21792,6 +21795,8 @@
   __traceiter_android_vh_tune_inactive_ratio
   __traceiter_android_vh_tune_scan_type
   __traceiter_android_vh_tune_swappiness
+  __traceiter_android_vh_page_referenced_check_bypass
+  __traceiter_android_vh_drain_all_pages_bypass
   __traceiter_android_vh_ufs_compl_command
   __traceiter_android_vh_ufs_send_command
   __traceiter_android_vh_ufs_send_tm_command
@@ -21994,6 +21999,8 @@
   __tracepoint_android_vh_tune_inactive_ratio
   __tracepoint_android_vh_tune_scan_type
   __tracepoint_android_vh_tune_swappiness
+  __tracepoint_android_vh_page_referenced_check_bypass
+  __tracepoint_android_vh_drain_all_pages_bypass
   __tracepoint_android_vh_ufs_compl_command
   __tracepoint_android_vh_ufs_send_command
   __tracepoint_android_vh_ufs_send_tm_command
@@ -24901,6 +24908,7 @@
   sysfs_create_groups
   sysfs_create_link
   sysfs_emit
+  sysfs_group_change_owner
   __sysfs_match_string
   sysfs_notify
   sysfs_remove_bin_file
@@ -25158,6 +25166,7 @@
   __tracepoint_android_vh_ftrace_size_check
   __tracepoint_android_vh_gic_resume
   __tracepoint_android_vh_gpio_block_read
+  __tracepoint_android_vh_handle_tlb_conf
   __tracepoint_android_vh_iommu_setup_dma_ops
   __tracepoint_android_vh_ipi_stop
   __tracepoint_android_vh_jiffies_update
@@ -31648,6 +31657,12 @@
 
 #extend_reclaim.ko
   try_to_free_mem_cgroup_pages
+
+##required by xm_power_debug.ko module
+  wakeup_sources_read_lock
+  wakeup_sources_read_unlock
+  wakeup_sources_walk_start
+  wakeup_sources_walk_next
 
 [abi_symbol_list]
 add_to_page_cache_locked
