@@ -403,6 +403,7 @@
   config_group_init_type_name
   config_item_init_type_name
   config_item_put
+  console_set_on_cmdline
   console_suspend_enabled
   console_trylock
   console_unlock
@@ -1173,6 +1174,7 @@
   i2c_unregister_device
   i2c_verify_client
   ida_alloc_range
+  ida_destroy
   ida_free
   idr_alloc
   idr_alloc_cyclic
@@ -2320,6 +2322,7 @@
   _totalram_pages
   touch_softlockup_watchdog
   __trace_bprintk
+  __trace_bputs
   trace_event_buffer_commit
   trace_event_buffer_reserve
   trace_event_ignore_this_pid
@@ -2346,6 +2349,7 @@
   __traceiter_android_rvh_find_energy_efficient_cpu
   __traceiter_android_rvh_irqs_disable
   __traceiter_android_rvh_irqs_enable
+  __traceiter_android_rvh_pci_d3_sleep
   __traceiter_android_rvh_post_init_entity_util_avg
   __traceiter_android_rvh_preempt_disable
   __traceiter_android_rvh_preempt_enable
@@ -2354,6 +2358,7 @@
   __traceiter_android_rvh_select_task_rq_fair
   __traceiter_android_rvh_select_task_rq_rt
   __traceiter_android_rvh_set_iowait
+  __traceiter_android_rvh_set_task_cpu
   __traceiter_android_rvh_typec_tcpci_chk_contaminant
   __traceiter_android_rvh_typec_tcpci_get_vbus
   __traceiter_android_rvh_uclamp_eff_get
@@ -2362,6 +2367,7 @@
   __traceiter_android_rvh_ufs_reprogram_all_keys
   __traceiter_android_rvh_update_blocked_fair
   __traceiter_android_rvh_update_load_avg
+  __traceiter_android_rvh_update_rt_rq_load_avg
   __traceiter_android_rvh_util_est_update
   __traceiter_android_vh_arch_set_freq_scale
   __traceiter_android_vh_cma_alloc_finish
@@ -2447,6 +2453,7 @@
   __tracepoint_android_rvh_find_energy_efficient_cpu
   __tracepoint_android_rvh_irqs_disable
   __tracepoint_android_rvh_irqs_enable
+  __tracepoint_android_rvh_pci_d3_sleep
   __tracepoint_android_rvh_post_init_entity_util_avg
   __tracepoint_android_rvh_preempt_disable
   __tracepoint_android_rvh_preempt_enable
@@ -2455,6 +2462,7 @@
   __tracepoint_android_rvh_select_task_rq_fair
   __tracepoint_android_rvh_select_task_rq_rt
   __tracepoint_android_rvh_set_iowait
+  __tracepoint_android_rvh_set_task_cpu
   __tracepoint_android_rvh_typec_tcpci_chk_contaminant
   __tracepoint_android_rvh_typec_tcpci_get_vbus
   __tracepoint_android_rvh_uclamp_eff_get
@@ -2463,6 +2471,7 @@
   __tracepoint_android_rvh_ufs_reprogram_all_keys
   __tracepoint_android_rvh_update_blocked_fair
   __tracepoint_android_rvh_update_load_avg
+  __tracepoint_android_rvh_update_rt_rq_load_avg
   __tracepoint_android_rvh_util_est_update
   __tracepoint_android_vh_arch_set_freq_scale
   __tracepoint_android_vh_cma_alloc_finish
