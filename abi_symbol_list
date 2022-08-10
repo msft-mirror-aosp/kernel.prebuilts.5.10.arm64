@@ -22213,7 +22213,6 @@
   trace_raw_output_prep
   trace_seq_printf
   trace_seq_putc
-  tracing_is_on
   tracing_off
   truncate_inode_pages_range
   truncate_pagecache_range
@@ -24703,7 +24702,6 @@
   resched_curr
   reset_control_assert
   reset_control_deassert
-  __reset_control_get
   reset_control_put
   reset_control_reset
   resume_cpus
