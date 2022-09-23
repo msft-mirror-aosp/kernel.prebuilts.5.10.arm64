@@ -241,6 +241,7 @@
   __bitmap_set
   bitmap_to_arr32
   __bitmap_weight
+  __bitmap_xor
   blk_abort_request
   blk_alloc_queue
   blk_check_plugged
@@ -495,6 +496,7 @@
   crypto_register_notifier
   crypto_register_scomp
   crypto_register_shash
+  crypto_req_done
   crypto_shash_digest
   crypto_shash_final
   crypto_shash_finup
@@ -606,11 +608,13 @@
   devm_extcon_dev_allocate
   devm_extcon_dev_register
   devm_free_irq
+  devm_fwnode_gpiod_get_index
   devm_fwnode_pwm_get
   devm_gen_pool_create
   devm_gpiochip_add_data_with_key
   devm_gpiod_get
   devm_gpiod_get_array
+  devm_gpiod_get_array_optional
   devm_gpiod_get_optional
   devm_gpiod_put_array
   devm_gpio_free
@@ -1252,6 +1256,7 @@
   iommu_device_sysfs_remove
   iommu_device_unlink
   iommu_device_unregister
+  iommu_dma_enable_best_fit_algo
   iommu_domain_alloc
   iommu_domain_free
   iommu_fwspec_add_ids
@@ -1355,6 +1360,7 @@
   kobject_init
   kobject_init_and_add
   kobject_put
+  kobject_rename
   kobject_uevent
   kobject_uevent_env
   kobj_sysfs_ops
@@ -1931,6 +1937,7 @@
   regulator_notifier_call_chain
   regulator_put
   regulator_register
+  regulator_set_active_discharge_regmap
   regulator_set_load
   regulator_set_voltage
   regulator_set_voltage_sel_regmap
@@ -2824,6 +2831,7 @@
   xa_find
   xa_find_after
   xa_get_mark
+  __xa_insert
   xa_load
   xa_set_mark
   xa_store
