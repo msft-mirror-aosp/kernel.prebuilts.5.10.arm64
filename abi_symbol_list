@@ -7802,6 +7802,8 @@
   find_vpid
   finish_wait
   firmware_request_nowarn
+  fixed_phy_register
+  fixed_phy_unregister
   fixed_size_llseek
   flow_keys_basic_dissector
   flush_dcache_page
@@ -8228,6 +8230,7 @@
   irq_create_mapping_affinity
   irq_create_of_mapping
   irq_dispose_mapping
+  irq_domain_add_simple
   irq_domain_alloc_irqs_parent
   irq_domain_create_hierarchy
   irq_domain_free_irqs_common
@@ -8924,6 +8927,7 @@
   phy_ethtool_get_link_ksettings
   phy_ethtool_nway_reset
   phy_ethtool_set_link_ksettings
+  phy_ethtool_set_wol
   phy_exit
   phy_find_first
   phy_get_pause
@@ -8935,9 +8939,12 @@
   phy_power_off
   phy_power_on
   phy_print_status
+  phy_register_fixup_for_uid
+  phy_save_page
   phy_set_mode_ext
   phy_start
   phy_stop
+  phy_unregister_fixup_for_uid
   pick_highest_pushable_task
   pid_nr_ns
   pid_task
@@ -9967,6 +9974,7 @@
   ttm_tt_populate
   ttm_tt_set_placement_caching
   ttm_unmap_and_unpopulate_pages
+  tty_encode_baud_rate
   tty_flip_buffer_push
   tty_insert_flip_string_fixed_flag
   tty_kref_put
@@ -10115,8 +10123,10 @@
   usb_asmedia_modifyflowcontrol
   usb_assign_descriptors
   usb_autopm_get_interface
+  usb_autopm_get_interface_async
   usb_autopm_get_interface_no_resume
   usb_autopm_put_interface
+  usb_autopm_put_interface_async
   usb_bulk_msg
   usb_calc_bus_time
   usb_choose_configuration
@@ -10194,6 +10204,7 @@
   usb_ifnum_to_if
   usb_initialize_gadget
   usb_interface_id
+  usb_interrupt_msg
   usb_kill_urb
   usb_match_id
   usb_match_one_id
@@ -16946,6 +16957,7 @@
   devm_kasprintf
   devm_kfree
   devm_kmalloc
+  devm_led_classdev_flash_register_ext
   devm_led_classdev_register_ext
   devm_led_classdev_unregister
   devm_mbox_controller_register
@@ -17683,7 +17695,9 @@
   kvmalloc_node
   led_classdev_flash_register_ext
   led_classdev_flash_unregister
+  led_colors
   led_get_flash_fault
+  led_set_brightness
   led_set_brightness_sync
   led_set_flash_brightness
   led_set_flash_timeout
@@ -17693,6 +17707,7 @@
   led_update_brightness
   led_update_flash_brightness
   linear_range_get_max_value
+  linear_range_get_selector_high
   linear_range_get_value
   __list_add_valid
   __list_del_entry_valid
@@ -18238,6 +18253,7 @@
   regulator_enable
   regulator_enable_regmap
   regulator_get
+  regulator_get_bypass_regmap
   regulator_get_current_limit_regmap
   regulator_get_mode
   regulator_get_optional
@@ -18255,6 +18271,7 @@
   regulator_notifier_call_chain
   regulator_put
   regulator_set_active_discharge_regmap
+  regulator_set_bypass_regmap
   regulator_set_current_limit
   regulator_set_current_limit_regmap
   regulator_set_load
@@ -19507,6 +19524,7 @@
   platform_find_device_by_driver
   pm_wq
   power_supply_is_system_supplied
+  power_supply_register_no_ws
   power_supply_unreg_notifier
   prepare_to_wait
   printk_deferred
@@ -20260,6 +20278,7 @@
   dev_fwnode
   __dev_get_by_index
   dev_get_by_index
+  dev_get_by_index_rcu
   dev_get_by_name
   dev_get_regmap
   dev_get_stats
@@ -21510,7 +21529,9 @@
   net_ratelimit
   nf_ct_attach
   nf_ct_delete
+  nf_register_net_hook
   nf_register_net_hooks
+  nf_unregister_net_hook
   nf_unregister_net_hooks
   nla_find
   nla_memcpy
@@ -22138,6 +22159,7 @@
   rtc_update_irq
   rtc_valid_tm
   rtnl_is_locked
+  __rtnl_link_unregister
   rtnl_lock
   rtnl_unlock
   runqueues
@@ -23621,6 +23643,7 @@
   cgroup_path_ns
   cgroup_taskset_first
   cgroup_taskset_next
+  check_move_unevictable_pages
   __check_object_size
   check_preempt_curr
   check_zeroed_user
@@ -25151,6 +25174,7 @@
   page_endio
   page_mapping
   __page_pinner_migration_failed
+  __pagevec_release
   panic
   panic_notifier_list
   panic_timeout
@@ -26073,7 +26097,6 @@
   __traceiter_android_vh_jiffies_update
   __traceiter_android_vh_logbuf
   __traceiter_android_vh_logbuf_pr_cont
-  __tracepoint_android_vh_madvise_cold_or_pageout
   __traceiter_android_vh_printk_hotplug
   __traceiter_android_vh_rproc_recovery
   __traceiter_android_vh_rproc_recovery_set
@@ -26195,6 +26218,7 @@
   __tracepoint_android_vh_jiffies_update
   __tracepoint_android_vh_logbuf
   __tracepoint_android_vh_logbuf_pr_cont
+  __tracepoint_android_vh_madvise_cold_or_pageout
   __tracepoint_android_vh_oom_check_panic
   __tracepoint_android_vh_printk_hotplug
   __tracepoint_android_vh_process_killed
@@ -26518,6 +26542,7 @@
   wait_for_completion_interruptible_timeout
   wait_for_completion_killable
   wait_for_completion_timeout
+  wait_on_page_bit
   __wait_rcu_gp
   wait_woken
   __wake_up
@@ -29184,6 +29209,7 @@
   snd_pcm_fill_iec958_consumer
   snd_pcm_fill_iec958_consumer_hw_params
   snd_pcm_hw_constraint_eld
+  snd_pcm_stop_xrun
 
 # required by snd-soc-rk817.ko
   snd_soc_component_exit_regmap
@@ -33749,6 +33775,7 @@ xa_load
   nr_swap_pages
   plist_requeue
   plist_del
+  __traceiter_android_rvh_handle_pte_fault_end
   __traceiter_android_vh_handle_pte_fault_end
   __traceiter_android_vh_cow_user_page
   __traceiter_android_vh_swapin_add_anon_rmap
@@ -33759,9 +33786,13 @@ xa_load
   __traceiter_android_vh_count_pswpout
   __traceiter_android_vh_count_swpout_vm_event
   __traceiter_android_vh_swap_slot_cache_active
+  __traceiter_android_rvh_drain_slots_cache_cpu
   __traceiter_android_vh_drain_slots_cache_cpu
+  __traceiter_android_rvh_alloc_swap_slot_cache
   __traceiter_android_vh_alloc_swap_slot_cache
+  __traceiter_android_rvh_free_swap_slot
   __traceiter_android_vh_free_swap_slot
+  __traceiter_android_rvh_get_swap_page
   __traceiter_android_vh_get_swap_page
   __traceiter_android_vh_page_isolated_for_reclaim
   __traceiter_android_vh_inactive_is_low
@@ -33770,10 +33801,12 @@ xa_load
   __traceiter_android_vh_unuse_swap_page
   __traceiter_android_vh_init_swap_info_struct
   __traceiter_android_vh_si_swapinfo
+  __traceiter_android_rvh_alloc_si
   __traceiter_android_vh_alloc_si
   __traceiter_android_vh_free_pages
   __traceiter_android_vh_set_shmem_page_flag
   __traceiter_android_vh_ra_tuning_max_page
+  __tracepoint_android_rvh_handle_pte_fault_end
   __tracepoint_android_vh_handle_pte_fault_end
   __tracepoint_android_vh_cow_user_page
   __tracepoint_android_vh_swapin_add_anon_rmap
@@ -33784,9 +33817,13 @@ xa_load
   __tracepoint_android_vh_count_pswpout
   __tracepoint_android_vh_count_swpout_vm_event
   __tracepoint_android_vh_swap_slot_cache_active
+  __tracepoint_android_rvh_drain_slots_cache_cpu
   __tracepoint_android_vh_drain_slots_cache_cpu
+  __tracepoint_android_rvh_alloc_swap_slot_cache
   __tracepoint_android_vh_alloc_swap_slot_cache
+  __tracepoint_android_rvh_free_swap_slot
   __tracepoint_android_vh_free_swap_slot
+  __tracepoint_android_rvh_get_swap_page
   __tracepoint_android_vh_get_swap_page
   __tracepoint_android_vh_page_isolated_for_reclaim
   __tracepoint_android_vh_inactive_is_low
@@ -33795,6 +33832,7 @@ xa_load
   __tracepoint_android_vh_unuse_swap_page
   __tracepoint_android_vh_init_swap_info_struct
   __tracepoint_android_vh_si_swapinfo
+  __tracepoint_android_rvh_alloc_si
   __tracepoint_android_vh_alloc_si
   __tracepoint_android_vh_free_pages
   __tracepoint_android_vh_set_shmem_page_flag
