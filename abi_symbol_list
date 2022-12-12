@@ -544,6 +544,7 @@
   request_threaded_irq
   reset_control_assert
   reset_control_deassert
+  reset_control_put
   reset_control_reset
   round_jiffies_up
   rpmsg_register_device
@@ -630,6 +631,7 @@
   strncpy
   strnlen
   strpbrk
+  strscpy_pad
   strsep
   __sw_hweight16
   __sw_hweight32
@@ -724,6 +726,7 @@
   bus_set_iommu
   device_link_add
   device_match_fwnode
+  devm_platform_get_and_ioremap_resource
   driver_find_device
   generic_device_group
   generic_iommu_put_resv_regions
@@ -1322,6 +1325,8 @@
   kthread_create_worker
   kthread_destroy_worker
   kthread_queue_work
+  kthread_should_stop
+  kthread_stop
   llist_add_batch
   memdup_user_nul
   memparse
@@ -1439,7 +1444,7 @@
   usb_remove_hcd
 
 # required by phy-qcom-qmp.ko
-  of_clk_get_by_name
+  devm_get_clk_from_child
   __of_reset_control_get
 
 # required by phy-qcom-qusb2.ko
@@ -1607,7 +1612,6 @@
   autoremove_wake_function
   datagram_poll
   do_wait_intr_irq
-  idr_alloc_u32
   lock_sock_nested
   proto_register
   proto_unregister
@@ -1635,6 +1639,12 @@
   sock_queue_rcv_skb
   sock_register
   sock_unregister
+  __xa_alloc
+  xa_erase
+  xa_find
+  xa_find_after
+  __xa_insert
+  xa_load
 
 # required by reboot-mode.ko
   devres_add
@@ -1670,7 +1680,6 @@
   mmc_send_tuning
   regulator_is_supported_voltage
   __reset_control_get
-  reset_control_put
   __sdhci_add_host
   sdhci_add_host
   sdhci_cleanup_host
@@ -1703,7 +1712,9 @@
   snd_ctl_add
   snd_ctl_new1
   snd_pcm_add_chmap_ctls
-  snd_pcm_create_iec958_consumer_hw_params
+  snd_pcm_create_iec958_consumer_default
+  snd_pcm_fill_iec958_consumer
+  snd_pcm_fill_iec958_consumer_hw_params
   snd_pcm_hw_constraint_eld
 
 # required by snd-soc-qcom-common.ko
@@ -1735,9 +1746,6 @@
 
 # required by snd-soc-wcd9335.ko
   kmemdup_nul
-  snd_soc_get_volsw_sx
-  snd_soc_info_volsw_sx
-  snd_soc_put_volsw_sx
   strnstr
 
 # required by snd-soc-wcd934x.ko
@@ -1819,6 +1827,14 @@
 # required by wcd934x.ko
   mfd_add_devices
   mfd_remove_devices
+
+# preserved by --additions-only
+  idr_alloc_u32
+  of_clk_get_by_name
+  snd_pcm_create_iec958_consumer_hw_params
+  snd_soc_get_volsw_sx
+  snd_soc_info_volsw_sx
+  snd_soc_put_volsw_sx
 
 [abi_symbol_list]
   activate_task
@@ -19875,6 +19891,7 @@
   add_device_randomness
   add_memory
   add_memory_subsection
+  address_space_init_once
   add_swap_extent
   add_taint
   add_timer
@@ -19934,6 +19951,8 @@
   bio_add_pc_page
   bio_alloc_bioset
   bio_associate_blkg_from_css
+  __bio_crypt_clone
+  bio_crypt_set_ctx
   bio_endio
   bio_put
   bio_reset
@@ -19959,6 +19978,7 @@
   blk_execute_rq_nowait
   blk_get_request
   blk_mq_free_request
+  blk_mq_queue_inflight
   blk_mq_rq_cpu
   blk_mq_sched_mark_restart_hctx
   blk_mq_start_request
@@ -21876,6 +21896,7 @@
   preempt_schedule_notrace
   prepare_to_wait
   prepare_to_wait_event
+  prepare_to_wait_exclusive
   print_hex_dump
   printk
   printk_deferred
@@ -21917,11 +21938,14 @@
   qcom_smem_state_update_bits
   queue_delayed_work_on
   queue_work_on
+  radix_tree_delete_item
   radix_tree_gang_lookup
   radix_tree_insert
   radix_tree_iter_delete
   radix_tree_lookup
+  radix_tree_lookup_slot
   radix_tree_next_chunk
+  radix_tree_replace_slot
   radix_tree_preload
   ___ratelimit
   rational_best_approximation
