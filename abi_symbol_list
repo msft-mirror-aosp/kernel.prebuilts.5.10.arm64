@@ -2060,6 +2060,7 @@
   blkcg_root
   blkg_lookup_slowpath
   bsearch
+  copy_from_kernel_nofault
   create_function_device
   driver_find
   dump_align
@@ -2981,8 +2982,8 @@
   find_next_zero_bit
   find_pid_ns
   find_task_by_vpid
-  find_vm_area
   find_vma
+  find_vm_area
   find_vpid
   finish_wait
   firmware_request_nowarn
@@ -3736,6 +3737,7 @@
   pm_runtime_forbid
   pm_runtime_force_resume
   pm_runtime_force_suspend
+  pm_runtime_get_if_active
   __pm_runtime_idle
   pm_runtime_irq_safe
   __pm_runtime_resume
@@ -3809,6 +3811,7 @@
   ___ratelimit
   raw_notifier_call_chain
   raw_notifier_chain_register
+  raw_notifier_chain_unregister
   _raw_read_lock
   _raw_read_lock_bh
   _raw_read_lock_irq
@@ -4707,6 +4710,7 @@
   usb_role_switch_unregister
   usb_speed_string
   usb_string_id
+  usb_udc_vbus_handler
   usb_unregister_notify
   __usecs_to_jiffies
   usleep_range
@@ -4816,6 +4820,7 @@
   wait_for_completion_interruptible_timeout
   wait_for_completion_killable
   wait_for_completion_timeout
+  wait_on_page_bit
   wait_woken
   __wake_up
   __wake_up_locked
@@ -11548,6 +11553,7 @@
   __drm_atomic_state_free
   drm_bridge_chain_mode_set
   drm_bridge_get_edid
+  drm_connector_attach_content_protection_property
   drm_connector_list_iter_begin
   drm_connector_list_iter_end
   drm_connector_list_iter_next
@@ -11596,6 +11602,7 @@
   drm_gem_unmap_dma_buf
   drm_get_format_info
   drm_get_format_name
+  drm_hdcp_update_content_protection
   drm_helper_mode_fill_fb_struct
   drm_kms_helper_poll_enable
   drm_kms_helper_poll_fini
@@ -11621,6 +11628,7 @@
   drm_mode_prune_invalid
   drm_mode_set_crtcinfo
   drm_modeset_lock_all
+  drm_modeset_unlock
   drm_modeset_unlock_all
   drm_mode_sort
   drm_mode_validate_size
@@ -11634,6 +11642,7 @@
   drm_plane_create_zpos_property
   drm_prime_get_contiguous_size
   __drm_printfn_seq_file
+  drm_property_blob_put
   drm_property_create
   drm_property_create_bitmask
   drm_property_create_bool
@@ -11641,6 +11650,8 @@
   drm_property_create_object
   drm_property_create_range
   drm_property_destroy
+  drm_property_lookup_blob
+  drm_property_replace_blob
   __drm_puts_seq_file
   drm_rect_calc_hscale
   drm_self_refresh_helper_cleanup
