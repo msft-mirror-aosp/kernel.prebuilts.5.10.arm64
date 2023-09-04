@@ -3974,6 +3974,7 @@
   ttm_tt_destroy_common
   ttm_tt_populate
   ttm_tt_set_placement_caching
+  ttm_tt_unpopulate
   ttm_unmap_and_unpopulate_pages
   tty_flip_buffer_push
   tty_insert_flip_string_fixed_flag
@@ -16616,6 +16617,10 @@
     clk_set_duty_cycle
 
 [abi_symbol_list]
+  __traceiter_android_vh_tune_mmap_readaround
+  __tracepoint_android_vh_tune_mmap_readaround
+
+[abi_symbol_list]
   access_process_vm
   activate_task
   add_timer
@@ -19959,6 +19964,10 @@
   ww_mutex_lock_interruptible
 
 [abi_symbol_list]
+# required by mount_state.ko
+  iterate_supers_type
+  get_fs_type
+[abi_symbol_list]
   access_process_vm
   activate_task
   add_cpu
@@ -21317,6 +21326,7 @@
   irq_work_queue
   irq_work_queue_on
   irq_work_sync
+  is_ashmem_file
   is_dma_buf_file
   isolate_and_split_free_page
   isolate_anon_lru_page
@@ -21509,6 +21519,7 @@
   __memcat_p
   memcg_kmem_enabled_key
   mem_cgroup_from_id
+  mem_cgroup_update_lru_size
   memchr
   memchr_inv
   memcmp
@@ -21576,6 +21587,7 @@
   mmc_send_tuning
   mmput
   mod_delayed_work_on
+  __mod_lruvec_state
   mod_node_page_state
   mod_timer
   mod_timer_pending
@@ -21775,6 +21787,7 @@
   __page_mapcount
   page_mapping
   __page_pinner_migration_failed
+  page_referenced
   page_symlink
   page_to_lruvec
   panic
@@ -22213,6 +22226,7 @@
   rndis_set_param_vendor
   rndis_signal_connect
   rndis_uninit
+  root_mem_cgroup
   root_task_group
   round_jiffies
   round_jiffies_relative
@@ -22754,6 +22768,7 @@
   __traceiter_android_vh_clear_mask_adjust
   __traceiter_android_vh_clear_reserved_fmt_fields
   __traceiter_android_vh_cma_drain_all_pages_bypass
+  __traceiter_android_vh_compact_finished
   __traceiter_android_vh_alloc_pages_reclaim_bypass
   __traceiter_android_vh_free_unref_page_bypass
   __traceiter_android_vh_kvmalloc_node_use_vmalloc
@@ -22811,6 +22826,7 @@
   __traceiter_android_vh_logbuf
   __traceiter_android_vh_look_around
   __traceiter_android_vh_look_around_migrate_page
+  __traceiter_android_vh_madvise_cold_or_pageout_abort
   __traceiter_android_vh_mark_page_accessed
   __traceiter_android_vh_mem_cgroup_alloc
   __traceiter_android_vh_mem_cgroup_css_offline
@@ -23019,6 +23035,7 @@
   __tracepoint_android_vh_clear_mask_adjust
   __tracepoint_android_vh_clear_reserved_fmt_fields
   __tracepoint_android_vh_cma_drain_all_pages_bypass
+  __tracepoint_android_vh_compact_finished
   __tracepoint_android_vh_alloc_pages_reclaim_bypass
   __tracepoint_android_vh_free_unref_page_bypass
   __tracepoint_android_vh_kvmalloc_node_use_vmalloc
@@ -23076,6 +23093,7 @@
   __tracepoint_android_vh_logbuf
   __tracepoint_android_vh_look_around
   __tracepoint_android_vh_look_around_migrate_page
+  __tracepoint_android_vh_madvise_cold_or_pageout_abort
   __tracepoint_android_vh_mark_page_accessed
   __tracepoint_android_vh_mem_cgroup_alloc
   __tracepoint_android_vh_mem_cgroup_css_offline
@@ -25314,6 +25332,7 @@
   overflowuid
   page_endio
   page_mapping
+  page_owner_inited
   __page_pinner_migration_failed
   __pagevec_release
   panic
@@ -25842,6 +25861,7 @@
   set_normalized_timespec64
   set_page_dirty_lock
   __SetPageMovable
+  __set_page_owner
   set_task_cpu
   set_user_nice
   sg_alloc_table
@@ -33673,6 +33693,12 @@
   utf16s_to_utf8s
   wait_for_completion_io_timeout
 
+#required by mq-deadline module
+  blk_mq_debugfs_rq_show
+  seq_list_start
+  seq_list_next
+  __blk_mq_debugfs_rq_show
+
 #required by cs35l41 module
   regcache_drop_region
   regmap_async_complete
@@ -33824,6 +33850,11 @@
   iio_trigger_free
   __iio_trigger_register
   iio_trigger_unregister
+
+[abi_symbol_list]
+  __traceiter_android_vh_wakeup_bypass
+  __tracepoint_android_vh_wakeup_bypass
+  tty_termios_hw_change
 
 [abi_symbol_list]
 add_to_page_cache_locked
