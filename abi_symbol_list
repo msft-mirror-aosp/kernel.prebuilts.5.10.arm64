@@ -1108,6 +1108,7 @@
   devfreq_suspend_device
   devm_clk_register
   devm_devfreq_add_device
+  devm_pm_runtime_enable
   devm_regulator_get_exclusive
   dev_pm_opp_find_freq_floor
   dev_pm_opp_get_freq
@@ -1199,7 +1200,6 @@
   drm_dp_link_rate_to_bw_code
   drm_dp_link_train_channel_eq_delay
   drm_dp_link_train_clock_recovery_delay
-  drm_edid_block_valid
   drm_encoder_cleanup
   drm_encoder_init
   drm_flip_work_cleanup
@@ -1834,6 +1834,7 @@
 
 # preserved by --additions-only
   drm_connector_init_with_ddc
+  drm_edid_block_valid
   gpiod_direction_input
   idr_alloc_u32
   of_clk_get_by_name
@@ -26333,6 +26334,7 @@
   __traceiter_android_vh_show_suspend_epoch_val
   __traceiter_android_vh_subpage_dma_contig_alloc
   __traceiter_android_vh_timer_calc_index
+  __traceiter_android_vh_try_fixup_sea
   __traceiter_android_vh_ufs_check_int_errors
   __traceiter_android_vh_ufs_clock_scaling
   __traceiter_android_vh_ufs_compl_command
@@ -26461,6 +26463,7 @@
   __tracepoint_android_vh_show_suspend_epoch_val
   __tracepoint_android_vh_subpage_dma_contig_alloc
   __tracepoint_android_vh_timer_calc_index
+  __tracepoint_android_vh_try_fixup_sea
   __tracepoint_android_vh_ufs_check_int_errors
   __tracepoint_android_vh_ufs_clock_scaling
   __tracepoint_android_vh_ufs_compl_command
@@ -34206,6 +34209,17 @@ xa_load
   swapcache_free_entries
   swap_type_to_swap_info
   blkcg_schedule_throttle
+  _atomic_dec_and_lock_irqsave
+  bio_uninit
+  blk_mq_kick_requeue_list
+  blk_rq_init
+  errno_to_blk_status
+  ioc_lookup_icq
+  sbitmap_finish_wait
+  sbitmap_prepare_to_wait
+  sbitmap_queue_wake_all
+  scsi_command_normalize_sense
+  ufshcd_release_scsi_cmd
   __traceiter_android_rvh_alloc_si
   __traceiter_android_rvh_alloc_swap_slot_cache
   __traceiter_android_rvh_drain_slots_cache_cpu
