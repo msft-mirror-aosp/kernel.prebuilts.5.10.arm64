@@ -352,6 +352,7 @@
 0x9dd76c18	devm_i2c_new_dummy_device	vmlinux	EXPORT_SYMBOL_GPL	
 0x5d1605e2	usbnet_set_msglevel	vmlinux	EXPORT_SYMBOL_GPL	
 0x9f762cdd	usbnet_get_msglevel	vmlinux	EXPORT_SYMBOL_GPL	
+0x70e7caa0	devm_pm_runtime_enable	vmlinux	EXPORT_SYMBOL_GPL	
 0x28779e52	drm_printf	vmlinux	EXPORT_SYMBOL	
 0x6b27729b	radix_tree_gang_lookup	vmlinux	EXPORT_SYMBOL	
 0xfcfea98e	__traceiter_android_rvh_post_init_entity_util_avg	vmlinux	EXPORT_SYMBOL_GPL	
