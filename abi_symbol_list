@@ -4082,6 +4082,8 @@
   __seq_open_private
   seq_printf
   seq_putc
+  seq_put_decimal_ll
+  seq_put_decimal_ull_width
   seq_puts
   seq_read
   seq_release
@@ -11478,6 +11480,9 @@
 # required by reboot-mode.ko
   devres_release
   kernel_kobj
+
+# required by xd_charger_framework.ko
+  kernel_power_off
 
 # required by rfkill-rk.ko
   kstrtoll
