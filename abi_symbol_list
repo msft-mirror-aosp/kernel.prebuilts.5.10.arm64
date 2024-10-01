@@ -2795,6 +2795,7 @@
   d_path
   dput
   drain_workqueue
+  driver_attach
   driver_create_file
   driver_register
   driver_remove_file
@@ -3861,6 +3862,7 @@
   put_pid
   put_sg_io_hdr
   __put_task_struct
+  put_tty_driver
   put_unused_fd
   put_vaddr_frames
   pwm_apply_state
@@ -3932,6 +3934,7 @@
   register_inet6addr_notifier
   register_inetaddr_notifier
   register_kernel_break_hook
+  register_kretprobe
   register_netdev
   register_netdevice
   register_netdevice_notifier
@@ -4709,10 +4712,33 @@
   trace_seq_printf
   try_module_get
   try_to_del_timer_sync
+  __tty_alloc_driver
+  tty_encode_baud_rate
   tty_flip_buffer_push
+  tty_hangup
+  __tty_insert_flip_char
   tty_insert_flip_string_fixed_flag
   tty_kref_put
+  tty_ldisc_deref
+  tty_ldisc_ref
+  tty_port_close
+  tty_port_destroy
+  tty_port_hangup
+  tty_port_init
+  tty_port_open
+  tty_port_register_device
   tty_port_tty_get
+  tty_port_tty_wakeup
+  tty_register_driver
+  tty_set_operations
+  tty_standard_install
+  tty_std_termios
+  tty_termios_baud_rate
+  tty_termios_copy_hw
+  tty_termios_hw_change
+  tty_unregister_device
+  tty_unregister_driver
+  tty_vhangup
   typec_switch_get_drvdata
   typec_switch_register
   typec_switch_unregister
@@ -4754,6 +4780,7 @@
   unregister_chrdev_region
   unregister_inet6addr_notifier
   unregister_inetaddr_notifier
+  unregister_kretprobe
   unregister_netdev
   unregister_netdevice_notifier
   unregister_netdevice_queue
@@ -4777,9 +4804,15 @@
   up_write
   usb_add_function
   usb_add_hcd
+  usb_alloc_urb
   usb_assign_descriptors
+  usb_autopm_get_interface
+  usb_autopm_put_interface
+  usb_clear_halt
+  usb_control_msg
   usb_copy_descriptors
   __usb_create_hcd
+  usb_deregister
   usb_disabled
   usb_enable_autosuspend
   usb_ep_alloc_request
@@ -4789,28 +4822,42 @@
   usb_ep_free_request
   usb_ep_queue
   usb_free_all_descriptors
+  usb_free_urb
   usb_function_register
   usb_function_unregister
   usb_gadget_activate
   usb_gadget_deactivate
   usb_gadget_set_state
+  usb_get_dev
+  usb_get_intf
   usb_gstrings_attach
   usb_hcd_is_primary_hcd
   usb_hcd_platform_shutdown
   usb_hub_find_child
   usb_interface_id
+  usb_kill_urb
+  usb_match_id
+  usb_match_one_id
   usb_os_desc_prepare_interf_dir
   usb_otg_state_string
+  usb_poison_urb
+  usb_put_dev
   usb_put_function_instance
   usb_put_hcd
+  usb_put_intf
+  usb_register_driver
   usb_register_notify
   usb_remove_hcd
   usb_role_switch_get_drvdata
   usb_role_switch_register
   usb_role_switch_unregister
+  usb_show_dynids
   usb_speed_string
+  usb_store_new_id
   usb_string_id
+  usb_submit_urb
   usb_udc_vbus_handler
+  usb_unpoison_urb
   usb_unregister_notify
   __usecs_to_jiffies
   usleep_range
@@ -12359,6 +12406,17 @@
   media_device_register_entity
   media_device_unregister_entity
 
+# required by usb_wwan.ko
+  usb_autopm_get_interface_async
+  usb_autopm_put_interface_async
+
+# required by option.ko
+  tty_port_tty_hangup
+
+# required by qmi_wwan_q.ko
+  arp_create
+  netdev_stats_to_stats64
+
 [abi_symbol_list]
 # commonly used symbols
   alloc_chrdev_region
@@ -13194,6 +13252,7 @@
   get_user_pages
   gic_nonsecure_priorities
   gpiochip_get_data
+  gpiod_direction_input
   gpiod_direction_output_raw
   gpiod_set_raw_value
   gpiod_set_raw_value_cansleep
@@ -13635,9 +13694,15 @@
   usb_remove_phy
   __usecs_to_jiffies
   usleep_range
+  v4l2_device_register
+  v4l2_device_unregister
   vabits_actual
   vfree
   videomode_from_timings
+  video_devdata
+  video_ioctl2
+  __video_register_device
+  video_unregister_device
   vmalloc
   vmalloc_user
   vmap
@@ -13893,6 +13958,14 @@
   regulator_set_active_discharge_regmap
   regulator_set_soft_start_regmap
 
+# required by m_can.ko
+  alloc_canfd_skb
+  can_bus_off
+  can_dlc2len
+  can_len2dlc
+  of_can_transceiver
+  of_irq_to_resource
+
 # required by ohci-hcd.ko
   gen_pool_dma_alloc_align
   gen_pool_dma_zalloc_align
@@ -14094,7 +14167,6 @@
 
 # required by spi-tcc.ko
   devm_spi_register_controller
-  gpiod_direction_input
   __spi_alloc_controller
   spi_controller_resume
   spi_controller_suspend
@@ -14208,6 +14280,20 @@
   dmabuf_page_pool_destroy
   dmabuf_page_pool_free
   dma_heap_get_dev
+
+# required by tcc-arxxxx.ko
+  v4l2_ctrl_handler_free
+  v4l2_ctrl_handler_init_class
+  v4l2_ctrl_new_std
+  v4l2_ctrl_new_std_menu
+
+# required by tcc-cap-media.ko
+  media_create_pad_link
+  media_device_cleanup
+  media_device_init
+  __media_device_register
+  media_device_unregister
+  media_entity_find_link
 
 # required by tcc-amba-pl011.ko
   amba_driver_unregister
@@ -14332,14 +14418,8 @@
   devm_thermal_zone_of_sensor_unregister
 
 # required by tcc_v4l2_vout.ko
-  v4l2_device_register
-  v4l2_device_unregister
-  video_devdata
   video_device_alloc
   video_device_release
-  video_ioctl2
-  __video_register_device
-  video_unregister_device
 
 # required by tcc_viqe_interface.ko
   memmove
@@ -14347,6 +14427,34 @@
 # required by tcc_wdma.ko
   iov_iter_init
   vfs_fsync
+
+# required by tccvin.ko
+  media_entity_remote_pad
+  media_pipeline_start
+  media_pipeline_stop
+  of_graph_get_endpoint_by_regs
+  of_reserved_mem_device_init_by_idx
+  __trace_bprintk
+  v4l2_async_notifier_register
+  __v4l2_device_register_subdev_nodes
+  v4l2_fh_open
+  v4l2_fill_pixfmt_mp
+  vb2_buffer_done
+  vb2_dma_contig_memops
+  vb2_fop_mmap
+  vb2_fop_poll
+  vb2_fop_release
+  vb2_ioctl_dqbuf
+  vb2_ioctl_expbuf
+  vb2_ioctl_qbuf
+  vb2_ioctl_reqbufs
+  vb2_ioctl_streamoff
+  vb2_ioctl_streamon
+  vb2_ops_wait_finish
+  vb2_ops_wait_prepare
+  vb2_plane_cookie
+  vb2_querybuf
+  vb2_queue_init
 
 # required by tccdrm.ko
   bus_find_device
@@ -14462,4 +14570,8 @@
   __of_reset_control_get
   platform_device_register
   reset_control_put
+
+# required by bd96801.regulator.ko
+  linear_range_get_value_array
+  regulator_desc_list_voltage_linear_range
 
