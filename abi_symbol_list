@@ -74,6 +74,7 @@
   bitmap_release_region
   __bitmap_replace
   __bitmap_set
+  __bitmap_weight
   blk_alloc_queue
   blk_cleanup_queue
   blk_queue_flag_clear
@@ -374,6 +375,7 @@
   _dev_info
   __dev_kfree_skb_any
   devm_add_action
+  devm_backlight_device_register
   devm_blk_ksm_init
   devm_clk_bulk_get
   devm_clk_bulk_get_all
@@ -426,6 +428,7 @@
   devm_platform_get_and_ioremap_resource
   devm_platform_ioremap_resource
   devm_platform_ioremap_resource_byname
+  devm_power_supply_get_by_phandle
   devm_power_supply_register
   devm_pwm_put
   devm_regmap_add_irq_chip
@@ -436,7 +439,6 @@
   __devm_regmap_init_mmio_clk
   devm_regulator_bulk_get
   devm_regulator_get
-  devm_regulator_get_exclusive
   devm_regulator_get_optional
   devm_regulator_put
   devm_regulator_register
@@ -1017,7 +1019,11 @@
   __iio_device_register
   iio_device_release_direct_mode
   iio_device_unregister
+  iio_enum_available_read
+  iio_enum_read
+  iio_enum_write
   iio_get_time_ns
+  iio_pollfunc_store_time
   iio_push_event
   iio_push_to_buffers
   iio_read_channel_processed
@@ -1674,9 +1680,11 @@
   __pm_runtime_use_autosuspend
   __pm_stay_awake
   pm_stay_awake
+  pm_suspend_global_flags
   pm_system_wakeup
   pm_wakeup_dev_event
   pm_wakeup_ws_event
+  power_supply_am_i_supplied
   power_supply_changed
   power_supply_get_battery_info
   power_supply_get_by_name
@@ -1686,8 +1694,10 @@
   power_supply_put_battery_info
   power_supply_register
   power_supply_register_no_ws
+  power_supply_reg_notifier
   power_supply_set_property
   power_supply_unregister
+  power_supply_unreg_notifier
   prandom_bytes
   prandom_u32
   preempt_schedule
@@ -1826,6 +1836,7 @@
   regulator_is_supported_voltage
   regulator_list_voltage_linear
   regulator_list_voltage_linear_range
+  regulator_map_voltage_linear
   regulator_map_voltage_linear_range
   regulator_notifier_call_chain
   regulator_put
@@ -1836,6 +1847,7 @@
   regulator_set_mode
   regulator_set_voltage
   regulator_set_voltage_sel_regmap
+  regulator_sync_voltage
   regulator_unregister_notifier
   release_firmware
   __release_region
@@ -2589,6 +2601,7 @@
 # preserved by --additions-only
   debugfs_file_get
   debugfs_file_put
+  devm_regulator_get_exclusive
 
 [abi_symbol_list]
 # commonly used symbols
@@ -11641,6 +11654,7 @@
   scsi_device_get
   scsi_device_put
   scsi_device_quiesce
+  scsi_device_resume
   scsi_dma_unmap
   scsi_eh_ready_devs
   __scsi_execute
@@ -16788,12 +16802,36 @@
   sdio_writesb
 
 [abi_symbol_list]
+  profile_event_register
+  profile_event_unregister
+  task_cputime_adjusted
+  arch_vma_name
+  _vm_normal_page
+  pmd_clear_bad
+  __pmd_trans_huge_lock
   __traceiter_android_rvh_dma_buf_stats_teardown
   __traceiter_android_vh_tune_fault_around_bytes
+  __traceiter_android_vh_io_statistics
   __traceiter_android_vh_do_swap_page_spf
+  __traceiter_android_vh_should_fault_around
+  __traceiter_android_vh_do_read_fault
+  __traceiter_android_vh_filemap_read
+  __traceiter_android_vh_filemap_map_pages
   __tracepoint_android_rvh_dma_buf_stats_teardown
   __tracepoint_android_vh_tune_fault_around_bytes
+  __tracepoint_android_vh_io_statistics
   __tracepoint_android_vh_do_swap_page_spf
+  __tracepoint_android_vh_should_fault_around
+  __tracepoint_android_vh_do_read_fault
+  __tracepoint_android_vh_filemap_read
+  __tracepoint_android_vh_filemap_map_pages
+  __traceiter_android_rvh_handle_bad_stack
+  __tracepoint_android_rvh_handle_bad_stack
+  netdev_get_name
+  tcp_send_active_reset
+  sock_i_ino
+  sock_from_file
+  tty_set_termios
 
 [abi_symbol_list]
 # commonly used symbols
@@ -32699,6 +32737,7 @@
   bpf_trace_run4
   bpf_trace_run5
   bpf_trace_run6
+  blk_mq_quiesce_queue_nowait
   bt_err
   bt_info
   bt_warn
@@ -36534,6 +36573,8 @@
   __traceiter_android_vh_wakeup_bypass
   __tracepoint_android_vh_wakeup_bypass
   tty_termios_hw_change
+  usb_bus_idr
+  usb_bus_idr_lock
 
 [abi_symbol_list]
 add_to_page_cache_locked
