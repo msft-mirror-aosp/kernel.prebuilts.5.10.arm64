@@ -5047,6 +5047,7 @@
   blk_queue_physical_block_size
   bpf_trace_run2
   bpf_trace_run3
+  blk_mq_quiesce_queue_nowait
   bt_err
   bt_info
   bt_warn
@@ -9311,6 +9312,163 @@
   sdio_writesb
 
 [abi_symbol_list]
+  vfs_llseek
+  zlib_inflateEnd
+  zlib_inflate
+  zlib_inflateInit2
+  zlib_inflate_workspacesize
+  vm_zone_stat
+  unload_nls
+  sync_inodes_sb
+  kfree_link
+  iov_iter_zero
+  iov_iter_revert
+  __blockdev_direct_IO
+  grab_cache_page_write_begin
+  add_to_page_cache_locked
+  lru_cache_add
+  write_cache_pages
+  errseq_set
+  __filemap_set_wb_err
+  mark_buffer_async_write
+  redirty_page_for_writepage
+  __test_set_page_writeback
+  end_page_writeback
+  generic_error_remove_page
+  block_is_partially_uptodate
+  buffer_migrate_page
+  block_invalidatepage
+  __set_page_dirty_buffers
+  truncate_pagecache
+  generic_file_splice_read
+  iter_file_splice_write
+  generic_file_mmap
+  vfs_fsync_range
+  balance_dirty_pages_ratelimited
+  pagecache_write_end
+  pagecache_write_begin
+  create_empty_buffers
+  try_to_writeback_inodes_sb
+  generic_perform_write
+  generic_file_direct_write
+  file_remove_privs
+  generic_write_checks
+  generic_fillattr
+  sync_inode
+  filemap_write_and_wait_range
+  igrab
+  generic_file_open
+  generic_read_dir
+  fiemap_fill_next_extent
+  lockref_get
+  drop_nlink
+  inc_nlink
+  d_instantiate
+  __posix_acl_create
+  d_splice_alias
+  d_move
+  d_rehash
+  d_find_alias
+  truncate_setsize
+  posix_acl_chmod
+  in_group_p
+  inode_dio_wait
+  setattr_prepare
+  generic_permission
+  inode_nohighmem
+  init_special_inode
+  unlock_new_inode
+  iget5_locked
+  d_obtain_alias
+  ilookup
+  shrink_dcache_sb
+  invalidate_bdev
+  clear_inode
+  truncate_inode_pages
+  inode_get_bytes
+  __mark_inode_dirty
+  posix_acl_equiv_mode
+  posix_acl_valid
+  posix_acl_from_xattr
+  posix_acl_to_xattr
+  make_bad_inode
+  set_nlink
+  load_nls
+  load_nls_default
+  current_umask
+  d_drop
+  mount_bdev
+  kill_block_super
+  inode_init_once
+  pagecache_get_page
+  blkdev_issue_flush
+  __bread_gfp
+  __lock_buffer
+  __getblk_gfp
+  I_BDEV
+  inode_set_bytes
+  sb_set_blocksize
+  blkdev_issue_zeroout
+  blkdev_issue_discard
+  __bforget
+  sync_dirty_buffer
+  unlock_buffer
+  mark_buffer_dirty
+  __wait_on_buffer
+  copy_page
+  submit_bh
+  end_buffer_read_sync
+  sync_blockdev
+  clean_bdev_aliases
+  blk_finish_plug
+  mpage_readpage
+  blk_start_plug
+  put_pages_list
+  ktime_get_coarse_real_ts64
+  wait_for_completion_io
+  blkdev_issue_write_same
+  try_to_free_buffers
+  set_bh_page
+  alloc_buffer_head
+  __getblk_gfp
+  __cond_resched_lock
+  free_buffer_head
+  submit_bh
+  __bread_gfp
+  __find_get_block
+  bdevname
+  __lock_buffer
+  bit_waitqueue
+  wake_bit_function
+  unlock_buffer
+  yield
+  sync_dirty_buffer
+  mark_buffer_dirty
+  blkdev_issue_flush
+  __wait_on_buffer
+  blk_finish_plug
+  write_dirty_buffer
+  blk_start_plug
+  __brelse
+  congestion_wait
+  add_to_page_cache_lru
+  wait_on_page_writeback
+  inode_newsize_ok
+  __insert_inode_hash
+  d_add_ci
+  generic_fh_to_dentry
+  generic_fh_to_parent
+  ihold
+  is_bad_inode
+  overflowgid
+  overflowuid
+  read_cache_page
+  sb_min_blocksize
+  sync_filesystem
+  truncate_inode_pages_final
+  set_cached_acl
+
+[abi_symbol_list]
 # commonly used symbols
   add_timer
   add_uevent_var
@@ -10637,6 +10795,7 @@
   vunmap
   vzalloc
   wait_for_completion
+  wait_for_completion_interruptible
   wait_for_completion_timeout
   __wake_up
   wake_up_process
@@ -11210,6 +11369,51 @@
 # required by ledtrig-heartbeat.ko
   avenrun
 
+# required by libahci.ko
+  __printk_ratelimit
+  pcim_enable_device
+  pcim_iomap_table
+  pcim_iomap_regions_request_all
+  pcim_pin_device
+
+# required by libata.ko
+  async_synchronize_cookie
+  attribute_container_register
+  attribute_container_unregister
+  blk_abort_request
+  blk_queue_update_dma_alignment
+  blk_queue_update_dma_pad
+  glob_match
+  pci_bus_type
+  pcim_iomap_regions
+  prepare_to_wait
+  __scsi_add_device
+  scsi_add_host_with_dma
+  scsi_change_queue_depth
+  scsi_check_sense
+  scsi_device_set_state
+  scsi_eh_finish_cmd
+  scsi_eh_flush_done_q
+  __scsi_format_command
+  scsi_host_alloc
+  scsi_host_put
+  scsi_remove_device
+  scsi_remove_host
+  scsi_rescan_device
+  scsi_schedule_eh
+  scsi_sense_desc_find
+  scsi_set_sense_field_pointer
+  scsi_set_sense_information
+  sdev_evt_send_simple
+  transport_add_device
+  transport_class_register
+  transport_class_unregister
+  transport_configure_device
+  transport_destroy_device
+  transport_remove_device
+  transport_setup_device
+  vscnprintf
+
 # required by lzo-rle.ko
   lzorle1x_1_compress
 
@@ -11639,6 +11843,7 @@
   proc_remove
 
 # required by rknpu.ko
+  alloc_iova
   dev_pm_domain_attach_by_name
   drm_gem_dumb_destroy
   drm_gem_handle_delete
@@ -11646,6 +11851,7 @@
   drm_gem_prime_import_dev
   drm_gem_vm_open
   drm_prime_gem_destroy
+  free_iova
   set_user_nice
   vmf_insert_mixed
   vm_insert_page
@@ -14752,4 +14958,90 @@
 # required by bd96801.regulator.ko
   linear_range_get_value_array
   regulator_desc_list_voltage_linear_range
+
+[abi_symbol_list]
+  _atomic_dec_and_lock
+  bdev_read_only
+  bio_clone_fast
+  bioset_exit
+  bioset_init
+  block_write_full_page
+  __breadahead
+  __cancel_dirty_page
+  capable_wrt_inode_uidgid
+  __cleancache_invalidate_inode
+  clear_nlink
+  clear_page_dirty_for_io
+  cont_write_begin
+  delete_from_page_cache
+  dirty_writeback_interval
+  end_buffer_write_sync
+  fiemap_prep
+  file_check_and_advance_wb_err
+  filemap_fault
+  filemap_fdatawait_range
+  filemap_fdatawrite
+  filemap_fdatawrite_range
+  filemap_flush
+  file_update_time
+  file_write_and_wait_range
+  generic_block_bmap
+  generic_cont_expand_simple
+  generic_file_write_iter
+  generic_write_end
+  iget_failed
+  iget_locked
+  ilookup5
+  inode_add_bytes
+  inode_init_owner
+  inode_owner_or_capable
+  inode_set_ctime_current
+  inode_set_flags
+  iov_iter_advance
+  iov_iter_alignment
+  iov_iter_copy_from_user_atomic
+  iov_iter_fault_in_readable
+  iov_iter_get_pages
+  iov_iter_single_seg_count
+  iunique
+  ll_rw_block
+  mark_buffer_write_io_error
+  mark_page_accessed
+  match_int
+  match_octal
+  match_strdup
+  match_token
+  mnt_drop_write
+  mnt_drop_write_file
+  mnt_want_write
+  mnt_want_write_file
+  mpage_readahead
+  mpage_writepages
+  notify_change
+  page_cache_next_miss
+  page_cache_prev_miss
+  page_get_link
+  page_mapped
+  page_symlink
+  pagevec_lookup_range
+  pagevec_lookup_range_tag
+  __pagevec_release
+  page_zero_new_buffers
+  readahead_gfp_mask
+  __remove_inode_hash
+  security_inode_init_security
+  seq_escape
+  setattr_copy
+  __set_page_dirty_nobuffers
+  __sync_dirty_buffer
+  sync_inode_metadata
+  tag_pages_for_writeback
+  timestamp_truncate
+  touch_atime
+  try_to_release_page
+  utf32_to_utf8
+  utf8_to_utf32
+  vfs_ioc_setflags_prepare
+  write_inode_now
+  write_one_page
 
