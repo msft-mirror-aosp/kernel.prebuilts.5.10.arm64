@@ -4772,6 +4772,7 @@
 0xe961b1f7	irq_find_matching_fwspec	vmlinux	EXPORT_SYMBOL_GPL	
 0x486075c8	gen_pool_dma_alloc	vmlinux	EXPORT_SYMBOL	
 0x331ce3aa	drm_release	vmlinux	EXPORT_SYMBOL	
+0xc49475f4	bpf_redirect_info	vmlinux	EXPORT_SYMBOL_GPL	
 0x6ba3f1e6	__tracepoint_task_newtask	vmlinux	EXPORT_SYMBOL_GPL	
 0x365b45d1	__tracepoint_sched_update_nr_running_tp	vmlinux	EXPORT_SYMBOL_GPL	
 0x9bf53179	__tracepoint_android_vh_io_statistics	vmlinux	EXPORT_SYMBOL_GPL	
