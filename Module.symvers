@@ -3633,6 +3633,7 @@
 0x0a7a3340	drm_scdc_write	vmlinux	EXPORT_SYMBOL	
 0x33bb46a1	pci_release_region	vmlinux	EXPORT_SYMBOL	
 0x45e7548a	ieee80211_connection_loss	vmlinux	EXPORT_SYMBOL	
+0xf33253c8	bpf_redirect_info	vmlinux	EXPORT_SYMBOL_GPL	
 0x33410d35	power_supply_unregister	vmlinux	EXPORT_SYMBOL_GPL	
 0x17656f7a	drm_release	vmlinux	EXPORT_SYMBOL	
 0xc569d8ce	__clk_get_name	vmlinux	EXPORT_SYMBOL_GPL	
