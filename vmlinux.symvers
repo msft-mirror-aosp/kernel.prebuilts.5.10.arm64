@@ -6489,6 +6489,7 @@
 0x1a31f223	of_find_i2c_device_by_node	vmlinux	EXPORT_SYMBOL	
 0x1ed564a9	__tracepoint_android_rvh_do_sp_pc_abort	vmlinux	EXPORT_SYMBOL_GPL	
 0xb999b45f	usb_get_dev	vmlinux	EXPORT_SYMBOL_GPL	
+0x762d2e8f	usb_disable_autosuspend	vmlinux	EXPORT_SYMBOL_GPL	
 0x121d958a	unregister_die_notifier	vmlinux	EXPORT_SYMBOL_GPL	
 0x4c6b0200	securityfs_create_dir	vmlinux	EXPORT_SYMBOL_GPL	
 0xdcb0a2c0	phylink_stop	vmlinux	EXPORT_SYMBOL_GPL	
